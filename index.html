@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -57,7 +58,7 @@ max-width:1200px;
 margin:auto;
 padding:30px;
 display:grid;
-grid-template-columns: 1.5fr 1fr;
+grid-template-columns:1.5fr 1fr;
 gap:28px;
 }
 
@@ -96,11 +97,6 @@ border:1px solid #ddd;
 font-size:14px;
 }
 
-.radio label{
-margin-right:16px;
-font-size:14px;
-}
-
 .note{
 font-size:12px;
 color:#777;
@@ -113,31 +109,25 @@ margin-top:14px;
 color:#666;
 }
 
-.cta{
-margin-top:22px;
-width:100%;
-padding:15px;
-background:#2962ff;
-color:white;
-border:none;
-border-radius:10px;
-font-size:16px;
-cursor:pointer;
-transition:0.2s;
+/* HOTEL SUMMARY */
+
+.hotel-row{
+display:flex;
+justify-content:space-between;
+align-items:flex-start;
+gap:16px;
+margin-bottom:16px;
 }
 
-.cta:hover{
-background:#1f4fd8;
+.hotel-info{
+flex:1;
 }
-
-/* HOTEL CARD */
 
 .hotel-img{
-width:100%;
-height:180px;
+width:110px;
+height:110px;
 object-fit:cover;
-border-radius:12px;
-margin-bottom:14px;
+border-radius:10px;
 }
 
 .hotel-title{
@@ -159,31 +149,78 @@ margin-bottom:6px;
 
 /* COUPON */
 
-.coupon{
+.coupon-box{
 margin-top:14px;
 border:1px dashed #bbb;
 border-radius:8px;
+padding:12px;
+height:46px;
+display:flex;
+align-items:center;
+font-size:14px;
+color:#666;
+position:relative;
+}
+
+.coupon-message{
+position:absolute;
+left:12px;
+}
+
+.coupon-tag{
+position:absolute;
+left:12px;
+display:flex;
+align-items:center;
+gap:6px;
+background:#eef3ff;
+color:#2962ff;
+padding:6px 10px;
+border-radius:20px;
+font-size:13px;
+visibility:hidden;
+opacity:0;
+}
+
+.coupon-tag button{
+background:none;
+border:none;
+cursor:pointer;
+font-size:14px;
+color:#2962ff;
+}
+
+/* COUPON CARD */
+
+.coupon-card{
+margin-top:10px;
+border:1px solid #eee;
+border-radius:10px;
 padding:12px;
 display:flex;
 justify-content:space-between;
 align-items:center;
 }
 
-button{
-border:none;
-border-radius:6px;
-padding:7px 11px;
-cursor:pointer;
+.coupon-desc{
+font-size:12px;
+color:#777;
 }
 
 .apply{
 background:#2962ff;
 color:white;
+padding:6px 12px;
+border-radius:6px;
+border:none;
+cursor:pointer;
+width:70px;
+text-align:center;
 }
 
-.remove{
-background:#eee;
-display:none;
+.applied{
+background:#e8f5e9;
+color:#0a8f55;
 }
 
 /* PRICE */
@@ -223,52 +260,40 @@ font-weight:600;
 margin-top:4px;
 }
 
-/* TRUST */
+/* FOOTER CTA */
 
-.trust{
-font-size:12px;
-color:#777;
-margin-top:10px;
-}
-
-/* PAY BAR */
-
-.paybar{
-position:fixed;
-bottom:0;
-left:0;
-width:100%;
-background:white;
-border-top:1px solid #eee;
-padding:16px 40px;
+.footer-cta{
+max-width:1200px;
+margin:10px auto 40px auto;
 display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.payprice{
-font-size:18px;
-font-weight:700;
+justify-content:flex-end;
+padding:0 30px;
 }
 
 .paybtn{
 background:#2962ff;
 color:white;
 border:none;
-padding:14px 26px;
+padding:14px 36px;
 border-radius:10px;
-font-size:15px;
+font-size:16px;
 cursor:pointer;
+transition:0.2s;
+}
+
+.paybtn:hover{
+background:#1f4fd8;
 }
 
 </style>
+
 </head>
 
 <body>
 
 <header>
 
-<div class="logo">Unravel</div>
+<div class="logo">Unravel - Review booking details</div>
 
 <div class="steps">
 <span class="active">1 Review</span> →
@@ -278,7 +303,6 @@ cursor:pointer;
 
 </header>
 
-
 <div class="container">
 
 <!-- LEFT SIDE -->
@@ -286,7 +310,6 @@ cursor:pointer;
 <div class="card">
 
 <h2>Guest Details</h2>
-
 
 <div class="field">
 <label>First Name *</label>
@@ -320,46 +343,64 @@ By proceeding you agree to Unravel's Privacy Policy & Terms.
 
 </div>
 
-
 <!-- RIGHT SIDE -->
 
 <div class="card">
 
-<img class="hotel-img"
-src="https://images.unsplash.com/photo-1566073771259-6a8506099945">
+<div class="hotel-row">
 
-<div class="hotel-title">Putahracsa Hua Hin </div>
+<div class="hotel-info">
+
+<div class="hotel-title">Putahracsa Hua Hin</div>
 
 <div class="rating">
 9.2 Excellent • 392 reviews
 </div>
-
 
 <div class="meta">
 • 3 Nights (Jun 3 → Jun 6)
 </div>
 
 <div class="meta">
-• Silksand Room
-• 2 Adults
+• Silksand Room • 2 Adults
 </div>
 
 <div class="meta">
 • Free cancellation until 23 May
 </div>
 
-<div class="meta">
-• Best Price guarantee
+
+
 </div>
 
-<div class="coupon">
+<img class="hotel-img"
+src="https://images.unsplash.com/photo-1566073771259-6a8506099945">
 
-<span>20UOB – Save 20%</span>
+</div>
+
+<!-- COUPON BOX -->
+
+<div class="coupon-box">
+
+<span id="couponMessage" class="coupon-message">Apply coupon</span>
+
+<div id="appliedCoupon" class="coupon-tag">
+UOB 20%
+<button id="remove">✕</button>
+</div>
+
+</div>
+
+<!-- AVAILABLE COUPON -->
+
+<div class="coupon-card">
 
 <div>
-<button id="apply" class="apply">Apply</button>
-<button id="remove" class="remove">Remove</button>
+<strong>UOB 20%</strong>
+<div class="coupon-desc">Save 20% with UOB card</div>
 </div>
+
+<button id="apply" class="apply">Apply</button>
 
 </div>
 
@@ -386,66 +427,70 @@ src="https://images.unsplash.com/photo-1566073771259-6a8506099945">
 </div>
 
 <div id="saved" class="saved">
-• You saved ฿11,386
+You saved ฿11,386 
 </div>
 
-
-</div>
-
-</div>
-
+<div id="saved" class="saved">
+Best Price guarantee
 </div>
 
 </div>
 
-
-<div class="paybar">
-
-<div class="payprice">
-Total: <span id="bottomPrice">฿14,492</span>
 </div>
 
+</div>
+
+<!-- MAIN CTA -->
+
+<div class="footer-cta">
 <button class="paybtn">
-Continue to Payment
+Continue to Payment →
 </button>
-
 </div>
-
 
 <script>
 
 let apply=document.getElementById("apply")
 let remove=document.getElementById("remove")
+
+let couponTag=document.getElementById("appliedCoupon")
+let message=document.getElementById("couponMessage")
+
 let coupon=document.getElementById("couponRow")
 let total=document.getElementById("total")
 let saved=document.getElementById("saved")
-let bottom=document.getElementById("bottomPrice")
 
 apply.onclick=function(){
+
+couponTag.style.visibility="visible"
+couponTag.style.opacity="1"
+
+message.style.display="none"
 
 coupon.style.display="flex"
 
 total.innerText="฿11,594"
-bottom.innerText="฿11,594"
-
 saved.innerText="You saved ฿14,284"
 
-apply.style.display="none"
-remove.style.display="inline"
+apply.innerText="Applied"
+apply.classList.add("applied")
 
 }
 
 remove.onclick=function(){
 
+couponTag.style.visibility="hidden"
+couponTag.style.opacity="0"
+
+message.style.display="block"
+
 coupon.style.display="none"
 
 total.innerText="฿14,492"
-bottom.innerText="฿14,492"
-
 saved.innerText="You saved ฿11,386"
 
-apply.style.display="inline"
-remove.style.display="none"
+apply.innerText="Apply"
+apply.classList.remove("applied")
 
 }
 
