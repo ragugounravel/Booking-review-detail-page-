@@ -1,14 +1,12 @@
 ## 💳 Booking Review Page – UX Enhancement
 
 ### 🔍 Observation
-On the **Review Booking page**, the total price is **not immediately visible when the page loads**.  
-Users must scroll down to view the price before proceeding to payment.
+On the **Review Booking page**, the total price is **not immediately visible when the page loads**. Users must scroll down to view the price before proceeding to payment.
 
 ---
 
 ### 📊 Insight
 Session recordings from **Microsoft Clarity** show that users consistently scroll on this page, likely to check the **booking price**.
-
 This indicates that the **price information is not visible within the initial viewport**, which creates unnecessary friction during the checkout flow.
 
 ---
