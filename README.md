@@ -1,7 +1,7 @@
 ## 💳 Booking Review Page – UX Enhancement
 
 ### 🔍 Observation
-On the **Review Booking page**, the total price is **not immediately visible when the page loads**. Users must scroll down to view the price before proceeding to payment.
+On the **Review Booking details page**, the total price is **not immediately visible when the page loads**. Users must scroll down to view the price before proceeding to payment.
 
 ---
 
